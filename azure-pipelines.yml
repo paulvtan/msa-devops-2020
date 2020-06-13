@@ -27,11 +27,13 @@ steps:
     cd ..
   displayName: 'npm install and build'
 
-  - script: |
-    cd $(rootDir)
-    npm run build
-    cd ..
-  displayName: 'npm install and build'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      cd $(rootDir)
+      npm run build
 
 - task: ArchiveFiles@2
   inputs:
