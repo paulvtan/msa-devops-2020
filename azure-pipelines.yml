@@ -31,6 +31,15 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
+    cd $(rootDir)
+    npm run build
+    echo Line a.
+    echo Line b.
+    npm install
+    echo Line c.
+    cd ..
+
+- script: |
     echo Line 1.
     echo Line 2.
     echo Line 3.
