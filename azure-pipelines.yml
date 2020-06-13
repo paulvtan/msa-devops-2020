@@ -5,7 +5,7 @@
 
 variables:
   rootDir: 'my-app'
-  buildDir: '$(rooDir)/build'
+  buildDir: '$(rootDir)/build'
 
 trigger:
 - master
