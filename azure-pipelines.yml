@@ -23,7 +23,10 @@ steps:
 - script: |
     cd $(rootDir)
     npm install
+    echo Line a.
+    echo Line b.
     npm run build
+    echo Line c.
     cd ..
   displayName: 'npm install and build'
 
