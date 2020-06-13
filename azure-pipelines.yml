@@ -23,34 +23,9 @@ steps:
 - script: |
     cd $(rootDir)
     npm install
-    echo Line a.
-    echo Line b.
     npm run build
-    echo Line c.
     cd ..
   displayName: 'npm install and build'
-
-- script: |
-    cd $(rootDir)
-    npm run build
-    echo Line a.
-    echo Line b.
-    npm install
-    echo Line c.
-    cd ..
-
-- script: |
-    echo Line 1.
-    echo Line 2.
-    echo Line 3.
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      cd $(rootDir)
-      npm run build
 
 - task: ArchiveFiles@2
   inputs:
@@ -59,7 +34,7 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-    
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
